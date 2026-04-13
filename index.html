@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>간단한 일정관리기</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>📅 간단한 일정관리기</h1>
+        <p>날짜별로 해야 할 일을 기록해보세요.</p>
+      </header>
+
+      <section class="card">
+        <form id="schedule-form" class="schedule-form">
+          <label>
+            날짜
+            <input type="date" id="date" required />
+          </label>
+
+          <label>
+            일정
+            <input type="text" id="task" placeholder="예: 프로젝트 회의" maxlength="80" required />
+          </label>
+
+          <button type="submit">추가</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="list-header">
+          <h2>일정 목록</h2>
+          <button id="clear-all" class="ghost" type="button">전체 삭제</button>
+        </div>
+        <ul id="schedule-list" class="schedule-list" aria-live="polite"></ul>
+        <p id="empty-text" class="empty-text">등록된 일정이 없습니다.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
